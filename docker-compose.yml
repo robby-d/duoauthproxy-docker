@@ -6,7 +6,8 @@ services:
     build: .
     restart: 'always'
     volumes:
-      - ./conf:/opt/duoauthproxy/conf:ro
+      - ./conf/authproxy.cfg:/opt/duoauthproxy/conf/authproxy.cfg:ro
+      - ./conf/ssl:/opt/duoauthproxy/conf/ssl:ro
       - ./log:/opt/duoauthproxy/log:rw
     ports:
       - '389:389'

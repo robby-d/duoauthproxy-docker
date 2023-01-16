@@ -5,7 +5,7 @@ Barebones docker image of Duo's duoauthproxy
 
 Make sure you have Docker and Docker Compose installed on your system.
 
-Copy the `conf/authproxy.cfg.dist` file to `conf/authproxy.cfg` and customize it to your needs according to the [duoauthproxy reference](https://duo.com/docs/authproxy-reference).
+Copy the `conf/authproxy.cfg.dist` file to `conf/authproxy.cfg` and customize it to your needs according to the [duoauthproxy reference](https://duo.com/docs/authproxy-reference). SSL certificates and private keys can be placed in the `conf/ssl` directory.
 
 Once created, set the proper permissions:
 ```

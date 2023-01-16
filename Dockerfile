@@ -11,7 +11,7 @@ RUN apt update
 RUN apt upgrade -y
 
 # Install dependencies
-RUN apt-get -y install build-essential libffi-dev perl zlib1g-dev wget ca-certificates
+RUN apt-get -y install build-essential libffi-dev perl zlib1g-dev wget
 
 # Add default user (with UID 35505 and GID 35505)
 RUN groupadd -r duo -g 35505 && useradd --no-log-init -r -g duo -u 35505 duo
@@ -28,7 +28,7 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN apt clean
 
 # Volume configuration
-VOLUME ["/opt/duoauthproxy/conf", "/opt/duoauthproxy/log"]
+VOLUME ["/opt/duoauthproxy/log"]
 
 USER duo:duo
 CMD ["/opt/duoauthproxy/bin/authproxy", "--logging-insecure"]

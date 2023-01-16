@@ -29,9 +29,7 @@ transport=starttls
 ssl_verify_hostname=true
 auth_type=plain
 #if using a private CA
-ssl_ca_certs_file=/opt/duoauthproxy/conf/my-internal-cacerts.pem
-#or if using a public CA
-#ssl_ca_certs_file=/etc/ssl/certs/ca-certificates.crt
+ssl_ca_certs_file=/opt/duoauthproxy/conf/ssl/my-internal-cacerts.pem
 
 ; SERVERS: Include one or more of the following configuration sections.
 ; To configure more than one server configuration of the same type, append a
@@ -46,6 +44,6 @@ api_host=api-12345.duosecurity.com
 port=389
 exempt_ou_1=CN=binduser,CN=Users,DC=ad,DC=local
 exempt_primary_bind=false
-ssl_cert_path=/opt/duoauthproxy/conf/myhost-fullchain.pem
-ssl_key_path=/opt/duoauthproxy/conf/myhost-key.pem
+ssl_cert_path=/opt/duoauthproxy/conf/ssl/myhost-fullchain.pem
+ssl_key_path=/opt/duoauthproxy/conf/ssl/myhost-key.pem
 #failmode=secure
