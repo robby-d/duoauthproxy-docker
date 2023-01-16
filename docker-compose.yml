@@ -1,0 +1,17 @@
+version: '3.8'
+name: "duoauthproxy"
+
+services:
+  duoauthproxy:
+    build: .
+    restart: 'always'
+    volumes:
+      - ./conf:/opt/duoauthproxy/conf:ro
+      #- ./log:/opt/duoauthproxy/log:rw
+    ports:
+      - '389:389'
+      - '636:636'
+    # you can delete this labels section if not using ufw-docker-automated (https://github.com/shinebayar-g/ufw-docker-automated)
+    labels:
+      UFW_MANAGED: 'TRUE'
+      UFW_ALLOW_FROM: '10.0.0.0/16-389;10.0.0.0/16-636'
