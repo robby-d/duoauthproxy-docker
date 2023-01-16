@@ -7,7 +7,7 @@ services:
     restart: 'always'
     volumes:
       - ./conf:/opt/duoauthproxy/conf:ro
-      #- ./log:/opt/duoauthproxy/log:rw
+      - ./log:/opt/duoauthproxy/log:rw
     ports:
       - '389:389'
       - '636:636'
